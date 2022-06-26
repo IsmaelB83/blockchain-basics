@@ -20,7 +20,7 @@ export default class BlockChain {
         return new Promise((resolve, reject) => {
             const hash = SHA256(self.body); 
             if (hash) {
-                self.hash = hash;
+                self.hash = hash.toString();
                 resolve(self);
             } else {
                 reject(Error('It broke'));
