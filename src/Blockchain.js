@@ -18,7 +18,7 @@ export default class BlockChain {
         let self = this;
         // Return promise
         return new Promise((resolve, reject) => {
-            const hash = SHA256(self.body); 
+            const hash = SHA256(JSON.stringify(self)); 
             if (hash) {
                 self.hash = hash.toString();
                 resolve(self);
